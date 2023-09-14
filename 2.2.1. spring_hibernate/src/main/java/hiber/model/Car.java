@@ -1,10 +1,14 @@
 package hiber.model;
 
-
-import org.springframework.stereotype.Component;
-
+import lombok.*;
 import javax.persistence.*;
 
+
+@AllArgsConstructor
+@NoArgsConstructor
+@EqualsAndHashCode
+@Getter
+@Setter
 @Entity
 @Table(name = "cars")
 public class Car {
@@ -13,29 +17,10 @@ public class Car {
     private Long id;
 
     @Column(name = "model")
-    String model;
+    private String model;
 
     @Column(name = "series")
-    int series;
-
-
-
-    public Car(String model, int series) {
-        this.model = model;
-        this.series = series;
-    }
-
-    public Car() {
-
-    }
-
-    public String getModel() {
-        return model;
-    }
-
-    public int getSeries() {
-        return series;
-    }
+    private int series;
 
     @Override
     public String toString() {

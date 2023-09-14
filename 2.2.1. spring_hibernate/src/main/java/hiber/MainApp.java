@@ -5,25 +5,24 @@ import hiber.model.Car;
 import hiber.model.User;
 import hiber.service.UserService;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
-
-import java.sql.SQLException;
 import java.util.List;
 
 public class MainApp {
-   public static void main(String[] args) throws SQLException {
+   public static void main(String[] args) {
       AnnotationConfigApplicationContext context = 
             new AnnotationConfigApplicationContext(AppConfig.class);
 
       UserService userService = context.getBean(UserService.class);
 
-      userService.add(new User("User9", "Lastname9", "user9@mail.ru",
-              new Car("FORMULA", 1)));
-      userService.add(new User("User10", "Lastname10", "user10@mail.ru",
-              new Car("FORMULA", 1)));
-      userService.add(new User("User11", "Lastname11", "user11@mail.ru",
-              new Car("FORMULA", 1)));
-      userService.add(new User("User12", "Lastname12", "user12@mail.ru",
-              new Car("FORMULA", 1)));
+      userService.add(new User(null,"User1", "Lastname1", "user1@mail.ru",
+              new Car(null, "FORMULA", 1)));
+      userService.add(new User(null,"User2", "Lastname2", "user2@mail.ru",
+              new Car(null,"FORMULA", 2)));
+      userService.add(new User(null,"User3", "Lastname3", "user3@mail.ru",
+              new Car(null,"FORMULA", 3)));
+      userService.add(new User(null,"User4", "Lastname4", "user4@mail.ru",
+              new Car(null,"FORMULA", 4)));
+
 
       List<User> users = userService.getUserByCarModelAndSeries("FORMULA", 1);
       for (User user : users) {

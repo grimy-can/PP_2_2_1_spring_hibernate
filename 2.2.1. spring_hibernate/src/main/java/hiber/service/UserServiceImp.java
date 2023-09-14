@@ -5,7 +5,6 @@ import hiber.model.User;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
-
 import java.util.List;
 
 @Service
@@ -22,8 +21,8 @@ public class UserServiceImp implements UserService {
 
    @Transactional(readOnly = true)
    @Override
-   public List<User> listUsers() {
-      return userDao.listUsers();
+   public List<User> getUsers() {
+      return userDao.getUsers();
    }
 
    @Transactional(readOnly = true)
@@ -31,6 +30,7 @@ public class UserServiceImp implements UserService {
    public List<User> getUserByCarModel(String model) {
       return userDao.getUserByCarModel(model);
    }
+
    @Transactional(readOnly = true)
    @Override
    public List<User> getUserByCarModelAndSeries(String model, int series) {

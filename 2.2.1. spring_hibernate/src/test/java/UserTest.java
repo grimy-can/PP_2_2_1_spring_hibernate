@@ -26,7 +26,7 @@ public class UserTest {
         try {
 
 
-            User user = new User(testName, testLastName, testEmail, new Car(carModel, carSeries));
+            User user = new User(null, testName, testLastName, testEmail, new Car(null, carModel, carSeries));
             userService.add(user);
 
             List<User> users = userService.getUserByCarModelAndSeries(carModel, 1117);
