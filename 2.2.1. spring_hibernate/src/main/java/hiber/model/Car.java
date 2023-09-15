@@ -1,9 +1,12 @@
 package hiber.model;
 
 import lombok.*;
+import org.springframework.stereotype.Component;
+
 import javax.persistence.*;
 
 
+@Component
 @AllArgsConstructor
 @NoArgsConstructor
 @EqualsAndHashCode
